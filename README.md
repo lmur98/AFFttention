@@ -51,5 +51,11 @@ The interaction hotspots relate STA predictions to a spatial prior of where an i
 *Italic numbers indicate the best performance of the previous SOTA.
 **Bold numbers indicate the best overall performance.
 
+Download the weights of STAFormer trained on the v1 split [Weights](https://drive.google.com/xxxxx)
+Download the weights of STAFormer+MH trained on the v2 split [Weights](https://drive.google.com/xxxxx)
+We also provide the different nodes in Ego4D STA [Env Aff Nodes V1](https://drive.google.com/xxxxx) [Env Aff Nodes V2](https://drive.google.com/xxxxx) 
+
+
 # Run the code! 🧑🏽‍💻 🧑🏽‍💻
 
+Follow [StillFast repository](https://github.com/fpv-iplab/stillfast/tree/master) for running the code 
