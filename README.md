@@ -41,12 +41,12 @@ The interaction hotspots relate STA predictions to a spatial prior of where an i
 | Model               | N      | N + V  | N + δ  | All  |
 |---------------------|--------|--------|--------|------|
 | StillFast           | 25.06  | 13.29  | 9.14   | 5.12 |
-| GANO v2             | 25.67  | 13.60* | 9.02   | 5.16 |
-| Language NAO        | 30.43* | 13.45  | 10.38* | 5.18*|
+| GANO v2             | 25.67  | *13.60* | 9.02   | 5.16 |
+| Language NAO        | *30.43* | 13.45  | *10.38* | *5.18*|
 | STAformer           | 30.61  | 16.67  | 10.06  | 5.62 |
 | STAformer+AFF       | 32.39  | 17.38  | 10.26  | 5.70 |
 | STAformer+MH        | 31.99  | 16.79  | 11.62  | 6.72 |
-| STAformer+MH+AFF    | 33.50**| 17.25**| 11.77**| 6.75**|
+| STAformer+MH+AFF    | **33.50**| **17.25**| **11.77**| **6.75**|
 
 *Italic numbers indicate the best performance of the previous SOTA.
 **Bold numbers indicate the best overall performance.
