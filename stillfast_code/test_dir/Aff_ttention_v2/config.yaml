@@ -1,0 +1,163 @@
+AVERAGE_TOP_K_CHECKPOINTS: 1
+BN:
+  EPSILON: 1e-05
+  MOMENTUM: 0.1
+  NORM_TYPE: batchnorm
+  NUM_BATCHES_PRECISE: 200
+  NUM_SPLITS: 1
+  NUM_SYNC_DEVICES: 1
+  USE_PRECISE_STATS: False
+  WEIGHT_DECAY: 0.0
+CHECKPOINT_FILE_PATH: /home/lmur/stillfast_baseline/stillfast/output/sta/StillFast_Fullmodel_Ego4D_v2/version_1/checkpoints/epoch=15-step=0196544-map_box_noun_verb_ttc=4.9931.ckpt
+CHECKPOINT_LOAD_MODEL_HEAD: True
+DATA:
+  FAST:
+    MEAN: [0.45, 0.45, 0.45]
+    NUM_FRAMES: 16
+    SAMPLING_RATE: 1
+    STD: [0.225, 0.225, 0.225]
+  STILL:
+    FAST_TO_STILL_SIZE_RATIO: 0.32
+    MAX_SIZE: 1333
+    MEAN: [0.485, 0.456, 0.406]
+    MIN_SIZE: [640, 672, 704, 736, 768, 800]
+    SIZE_DIVISIBLE: 14
+    STD: [0.229, 0.224, 0.225]
+DATA_LOADER:
+  NUM_WORKERS: 6
+  PIN_MEMORY: True
+EGO4D_STA:
+  ANNOTATION_DIR: /home/furnari/ego4d_data/v2/annotations
+  FAST_LMDB_PATH: /ssd/furnari/sta_lmdb_v2/
+  STILL_FRAMES_PATH: /home/furnari/data/ego4d/v2-15-02-23/object_frames/
+  TEST_LISTS: ['fho_sta_test_unannotated.json']
+  TRAIN_LISTS: ['fho_sta_train.json']
+  VAL_LISTS: ['fho_sta_val.json']
+ENABLE_LOGGING: True
+EXPERIMENT_NAME: StillFast_Fullmodel_Ego4D_v2
+FAST_DEV_RUN: False
+MODEL:
+  BRANCH: Dino2D_with_EgoVLP
+  DINO_LAST_LAYERS: [11]
+  FAST:
+    BACKBONE:
+      NAME: x3d_m
+      PRETRAINED: True
+      TEMPORAL_CAUSAL_CONV3D: False
+  LOSS:
+    NOUN: cross_entropy
+    TTC: smooth_l1
+    VERB: cross_entropy
+    WEIGHTS:
+      NAO: 1
+      NOUN: 1.0
+      TTC: 0.5
+      VERB: 0.1
+  NAME: StillFast
+  NOUN_CLASSES: 128
+  PATCH_SIZE: None
+  STILL:
+    BACKBONE:
+      EMBEDDING_SIZE: 384
+      LAST_LAYER: 11
+      NAME: Dinov2
+      PRETRAINED: False
+      TRAINABLE_LAYERS: 3
+    BOX:
+      BATCH_SIZE_PER_IMAGE: 256
+      BG_IOU_THRESH: 0.5
+      DETECTIONS_PER_IMG: 100
+      FG_IOU_THRESH: 0.5
+      NMS_THRESH: 0.5
+      POOLER_SAMPLING_RATIO: 0
+      POSITIVE_FRACTION: 0.25
+      PREDICTOR_REPRESENTATION_SIZE: 1024
+      REG_WEIGHTS: (10.0, 10.0, 5.0, 5.0)
+      SCORE_THRESH: 0.05
+    PRETRAINED: True
+    REPLACE_HEAD: True
+    RPN:
+      ANCHOR_GENERATOR: None
+      BATCH_SIZE_PER_IMAGE: 256
+      BG_IOU_THRESH: 0.3
+      FG_IOU_THRESH: 0.7
+      HEAD: None
+      NMS_THRESH: 0.7
+      POSITIVE_FRACTION: 0.5
+      POST_NMS_TOP_N_TEST: 1000
+      POST_NMS_TOP_N_TRAIN: 2000
+      PRE_NMS_TOP_N_TEST: 1000
+      PRE_NMS_TOP_N_TRAIN: 2000
+      SCORE_THRESH: 0.0
+  STILLFAST:
+    FUSION:
+      CONVOLUTIONAL_FUSION_BLOCK:
+        CONV_BLOCK_ARCHITECTURE: simple_convolution
+        GATING_BLOCK: None
+        POOLING: nonlocal
+        POOLING_FRAMES: 16
+        POST_SUM_CONV_BLOCK: True
+        POST_UP_CONV_BLOCK: True
+        TEMPORAL_NONLOCAL_POOLING:
+          INTER_CHANNELS: half
+          MAX_HEIGHT_BEFORE_POOLING: 16
+      FUSION_BLOCK: convolutional
+      LATERAL_CONNECTIONS: False
+      NONLOCAL_FUSION_BLOCK:
+        INTER_CHANNELS: half
+        MAX_HEIGHT_BEFORE_POOLING_3D: 16
+        MAX_HEIGHT_BEFORE_SCALING_2D: 128
+        POST_SUM_CONV_BLOCK: True
+        SCALING_2D_MODE: nearest
+      POST_PYRAMID_FUSION: False
+      PRE_PYRAMID_FUSION: True
+    ROI_HEADS:
+      V2_OPTIONS:
+        FUSION: concat_residual
+        VERB_TOPK: 1
+      VERSION: aff
+  TTC_PREDICTOR: regressor
+  VERB_CLASSES: 81
+NUM_DEVICES: 4
+NUM_SHARDS: 1
+OUTPUT_DIR: /home/lmur/stillfast_baseline/stillfast/output
+SAVE_TOP_K: 1
+SOLVER:
+  ACCELERATOR: gpu
+  BASE_LR: 5e-05
+  BENCHMARK: False
+  DAMPENING: 0.0
+  GAMMA: 0.2
+  LR_POLICY: multistep_warmup
+  MAX_EPOCH: 35
+  MILESTONES: [15, 20]
+  MOMENTUM: 0.9
+  NESTEROV: True
+  OPTIMIZING_METHOD: adam
+  PRECISION: 16
+  REPLACE_SAMPLER_DDP: False
+  STRATEGY: ddp
+  WARMUP_STEPS: 5000
+  WEIGHT_DECAY: 0.0001
+TASK: sta
+TEST:
+  BATCH_SIZE: 12
+  DATASET: Ego4dShortTermAnticipationStillVideo
+  ENABLE: False
+  GROUP_BATCH_SAMPLER: False
+  OUTPUT_JSON: None
+TRAIN:
+  AUGMENTATIONS:
+    RANDOM_HORIZONTAL_FLIP: True
+  BATCH_SIZE: 10
+  DATASET: Ego4dShortTermAnticipationStillVideo
+  ENABLE: True
+  GROUP_BATCH_SAMPLER: False
+  WEIGHTED_SAMPLER: False
+VAL:
+  BATCH_SIZE: 10
+  DATASET: Ego4dShortTermAnticipationStillVideo
+  ENABLE: False
+  GROUP_BATCH_SAMPLER: True
+  OUTPUT_JSON: False
+WANDB_RUN: affordances/uncategorized/mlgskxqb
