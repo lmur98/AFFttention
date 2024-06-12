@@ -1,9 +1,16 @@
 
 
 # AFFttention
-Official repository of "AFF-ttention! Affordances and Attention models for Short-Term Object Interaction Anticipation".
+Official repository of "AFF-ttention! Affordances and Attention models for Short-Term Object Interaction Anticipation" 
+[Lorenzo Mur-Labadia*](https://sites.google.com/unizar.es/lorenzo-mur-labadia/inicio)
+[Ruben Martinez-Cantin](https://webdiis.unizar.es/~rmcantin/)
+Josechu Guerrero Campo
+[Giovanni Maria Farinella](http://www.dmi.unict.it/~gfarinella)
+[Antonino Furnari](https://www.antoninofurnari.it/)
+
 
 We win the 2nd 🥈 place at the Ego4D Short Term Anticipation Challenge at CVPR 24'.
+Check our paper [Arvix](https://arxiv.org/pdf/2406.01194) 📃
 
 ![Teaser gif](images_GitHub_Affttention/teaser.gif)
 
@@ -59,3 +66,5 @@ We also provide the different nodes in Ego4D STA [Env Aff Nodes V1](https://driv
 # Run the code! 🧑🏽‍💻 🧑🏽‍💻
 
 Follow [StillFast repository](https://github.com/fpv-iplab/stillfast/tree/master) for running the code 
+
+For any questions, contact me at lmur@unizar.es 
