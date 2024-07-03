@@ -1,16 +1,17 @@
 
 
 # AFFttention
-Official repository of "AFF-ttention! Affordances and Attention models for Short-Term Object Interaction Anticipation" 
+Official repository of "AFF-ttention! Affordances and Attention models for Short-Term Object Interaction Anticipation", accepted at ECCV 24'!!
 [Lorenzo Mur-Labadia*](https://sites.google.com/unizar.es/lorenzo-mur-labadia/inicio)
 [Ruben Martinez-Cantin](https://webdiis.unizar.es/~rmcantin/)
 Josechu Guerrero Campo
 [Giovanni Maria Farinella](http://www.dmi.unict.it/~gfarinella)
 [Antonino Furnari](https://www.antoninofurnari.it/)
 
-
-We win the 2nd 🥈 place at the Ego4D Short Term Anticipation Challenge at CVPR 24'.
-Check our paper [Arvix](https://arxiv.org/pdf/2406.01194) 📃
+[04/07/2024] We update the repository with the affordances annotations and descriptors and EPIC-Kitchens STA annotations.
+[01/07/2024] Our paper was accepted at ECCV 2024! 🎉
+[16/06/2024] We won the 2nd 🥈 place at the Ego4D Short Term Anticipation Challenge at CVPR 24'.
+[05/06/2024] Check a pre-print of our paper on [Arvix](https://arxiv.org/pdf/2406.01194) 📃
 
 ![Teaser gif](images_GitHub_Affttention/teaser.gif)
 
@@ -37,9 +38,15 @@ We first leverage environment affordances, estimated by matching the input obser
 
 ![Env_Aff](images_GitHub_Affttention/env_aff.png)
 
+
+
+You can find the topological nodes of the [training](https://drive.google.com/drive/folders/1kMPBrhFyDjICl4I2cvstZGUxJjFg3WQQ?usp=drive_link) and [validation](https://drive.google.com/drive/folders/11ImgNItf6rdvvXOWvNgF1YBTyzSzUn8F?usp=drive_link) videos. Each directory is a list of dicts, where each dict contains the different topological zones of that video, their STA annotations, the Ego4D narrations and the respective video frames. Note that a zone is just the topological nodes of EgoTopo, obtained with the mentioned Siamese R-18.
+
+We propagate the STA across the zones in order to extract the affordances. Here is the [AFF per zone](https://drive.google.com/file/d/1Jf7MjjDZaIkAR-ctu8n7qUBqp0UeJfuV/view?usp=drive_link) and the [visual and text descriptors](https://drive.google.com/drive/folders/1EoD2nMwOC0Vh_aBnUZ4eb6x57DnKJQla?usp=drive_link) dataset.
+
 ### Interaction hotspots 🫳🏻 🖐🏻
 
-The interaction hotspots relate STA predictions to a spatial prior of where an interaction may take place in the current frame. This is done by predicting an interaction hotspot, which is used to re-weigh confidence scores of STA predictions depending on the object’s locations.
+The interaction hotspots relate STA predictions to a spatial prior of where an interaction may take place in the current frame. This is done by predicting an interaction hotspot, which is used to re-weigh confidence scores of STA predictions depending on the object’s locations. We follow "Joint Hand Motion and Interaction Hotspots Prediction from Egocentric Videos" (CVPR 2022) by Liu et. al to extract the interaction hotspots. We also follow "Understanding Human Hands in Contact at Internet Scale (CVPR 2020, Oral)" by Shan et. al to extract hand annotations on the Ego4D STA split. Here is the json with the pre-extracted [hands](https://drive.google.com/file/d/1AI6a4EwD8QZmJcXcS8ohO2-uGoJAE7uh/view?usp=drive_link).
 
 ![Env_Aff](images_GitHub_Affttention/int_hotspots.png)
 
@@ -60,8 +67,6 @@ The interaction hotspots relate STA predictions to a spatial prior of where an i
 
 Download the weights of STAFormer trained on the v1 split [Weights](https://drive.google.com/xxxxx)
 Download the weights of STAFormer+MH trained on the v2 split [Weights](https://drive.google.com/xxxxx)
-We also provide the different nodes in Ego4D STA [Env Aff Nodes V1](https://drive.google.com/xxxxx) [Env Aff Nodes V2](https://drive.google.com/xxxxx) 
-
 
 # Run the code! 🧑🏽‍💻 🧑🏽‍💻
 
