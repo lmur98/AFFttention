@@ -42,6 +42,8 @@ We first leverage environment affordances, estimated by matching the input obser
 
 You can find the topological nodes of the [training](https://drive.google.com/drive/folders/1kMPBrhFyDjICl4I2cvstZGUxJjFg3WQQ?usp=drive_link) and [validation](https://drive.google.com/drive/folders/11ImgNItf6rdvvXOWvNgF1YBTyzSzUn8F?usp=drive_link) videos. Each directory is a list of dicts, where each dict contains the different topological zones of that video, their STA annotations, the Ego4D narrations and the respective video frames. Note that a zone is just the topological nodes of EgoTopo, obtained with the mentioned Siamese R-18.
 
+For the affordances propagation, we try different alternatives (using only the topological nodes or aggrupating in cross-environmental clusters). The best version work with only topological nodes (propagate_aff_from_node.py), but feel free to try the other alternatives.
+
 We propagate the STA across the zones in order to extract the affordances. Here is the [AFF per zone](https://drive.google.com/file/d/1Jf7MjjDZaIkAR-ctu8n7qUBqp0UeJfuV/view?usp=drive_link) and the [visual and text descriptors](https://drive.google.com/drive/folders/1EoD2nMwOC0Vh_aBnUZ4eb6x57DnKJQla?usp=drive_link) dataset.
 
 ### Interaction hotspots 🫳🏻 🖐🏻
@@ -64,8 +66,6 @@ The interaction hotspots relate STA predictions to a spatial prior of where an i
 
 *Italic numbers indicate the best performance of the previous SOTA.
 **Bold numbers indicate the best overall performance.
-
-- Download the weights of STAFormer trained on the v1 split [Weights](https://drive.google.com/xxxxx)
   
 - Download the weights of STAFormer+MH trained on the v2 split [Weights](https://drive.google.com/xxxxx)
   
