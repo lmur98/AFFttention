@@ -8,10 +8,10 @@ Josechu Guerrero Campo
 [Giovanni Maria Farinella](http://www.dmi.unict.it/~gfarinella)
 [Antonino Furnari](https://www.antoninofurnari.it/)
 
-[04/07/2024] We update the repository with the affordances annotations and descriptors and EPIC-Kitchens STA annotations.
-[01/07/2024] Our paper was accepted at ECCV 2024! 🎉
-[16/06/2024] We won the 2nd 🥈 place at the Ego4D Short Term Anticipation Challenge at CVPR 24'.
-[05/06/2024] Check a pre-print of our paper on [Arvix](https://arxiv.org/pdf/2406.01194) 📃
+- [04/07/2024] We update the repository with the affordances annotations and descriptors and EPIC-Kitchens STA annotations.
+- [01/07/2024] Our paper was accepted at ECCV 2024! 🎉
+- [16/06/2024] We won the 2nd 🥈 place at the Ego4D Short Term Anticipation Challenge at CVPR 24'.
+- [05/06/2024] Check a pre-print of our paper on [Arvix](https://arxiv.org/pdf/2406.01194) 📃
 
 ![Teaser gif](images_GitHub_Affttention/teaser.gif)
 
@@ -65,8 +65,11 @@ The interaction hotspots relate STA predictions to a spatial prior of where an i
 *Italic numbers indicate the best performance of the previous SOTA.
 **Bold numbers indicate the best overall performance.
 
-Download the weights of STAFormer trained on the v1 split [Weights](https://drive.google.com/xxxxx)
-Download the weights of STAFormer+MH trained on the v2 split [Weights](https://drive.google.com/xxxxx)
+- Download the weights of STAFormer trained on the v1 split [Weights](https://drive.google.com/xxxxx)
+  
+- Download the weights of STAFormer+MH trained on the v2 split [Weights](https://drive.google.com/xxxxx)
+  
+- EPIC-KITCHENS STA ANNOTATIONS [training](https://drive.google.com/file/d/1VZwi69chFYZbMLJyL8SAu7Q5JbKoyy3Z/view?usp=drive_link) and [validation](https://drive.google.com/file/d/1z01Qp5Sy4UMcAdJZhQNzyGaMn4ds35wj/view?usp=drive_link). You can download the videos and images on the EPIC-KITCHENS official webpage.
 
 # Run the code! 🧑🏽‍💻 🧑🏽‍💻
 
