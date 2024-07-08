@@ -10,7 +10,7 @@ Josechu Guerrero Campo
 
 - [04/07/2024] We update the repository with the affordances annotations and descriptors and EPIC-Kitchens STA annotations.
 - [01/07/2024] Our paper was accepted at ECCV 2024! 🎉
-- [16/06/2024] We won the 2nd 🥈 place at the Ego4D Short Term Anticipation Challenge at CVPR 24'.
+- [16/06/2024] We won the 2nd 🥈🏆 place at the Ego4D Short Term Anticipation Challenge at CVPR 24'. Check out the [technical report](https://arxiv.org/pdf/2407.04369) 📃
 - [05/06/2024] Check a pre-print of our paper on [Arvix](https://arxiv.org/pdf/2406.01194) 📃
 
 ![Teaser gif](images_GitHub_Affttention/teaser.gif)
