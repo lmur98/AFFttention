@@ -1,6 +1,6 @@
 
 
-# AFFttention
+# AFFttention!!!
 Official repository of "AFF-ttention! Affordances and Attention models for Short-Term Object Interaction Anticipation", accepted at ECCV 24'!!
 [Lorenzo Mur-Labadia*](https://sites.google.com/unizar.es/lorenzo-mur-labadia/inicio)
 [Ruben Martinez-Cantin](https://webdiis.unizar.es/~rmcantin/)
@@ -40,7 +40,7 @@ We first leverage environment affordances, estimated by matching the input obser
 
 
 
-You can find the topological nodes of the [training](https://drive.google.com/drive/folders/1kMPBrhFyDjICl4I2cvstZGUxJjFg3WQQ?usp=drive_link) and [validation](https://drive.google.com/drive/folders/11ImgNItf6rdvvXOWvNgF1YBTyzSzUn8F?usp=drive_link) videos. Each directory is a list of dicts, where each dict contains the different topological zones of that video, their STA annotations, the Ego4D narrations and the respective video frames. Note that a zone is just the topological nodes of EgoTopo, obtained with the mentioned Siamese R-18.
+You can find the topological nodes of the [training](https://drive.google.com/drive/folders/1kMPBrhFyDjICl4I2cvstZGUxJjFg3WQQ?usp=drive_link) and [validation](https://drive.google.com/drive/folders/11ImgNItf6rdvvXOWvNgF1YBTyzSzUn8F?usp=drive_link) videos. Each directory is a list of dicts, where each dict contains the different topological zones of that video, their STA annotations, the Ego4D narrations and the respective video frames. Note that a zone is just the topological nodes of EgoTopo, obtained with the mentioned Siamese R-18 finetuned on Ego-4D. We pre-compute the Superkeypoints, homographies and R-152 features. Here you can just download the [weights](https://iplab.dmi.unict.it/sharing/afftention/Ego_4D_Siamese_R18_5MLP_ALL_18_5130.pth) of the trained network on those labels.
 
 For the affordances propagation, we try different alternatives (using only the topological nodes or aggrupating in cross-environmental clusters). The best version work with only topological nodes (propagate_aff_from_node.py), but feel free to try the other alternatives.
 
@@ -67,9 +67,9 @@ The interaction hotspots relate STA predictions to a spatial prior of where an i
 *Italic numbers indicate the best performance of the previous SOTA.
 **Bold numbers indicate the best overall performance.
   
-- Download the weights of STAFormer+MH trained on the v2 split [Weights](https://drive.google.com/xxxxx)
+- Download the weights of STAFormer+MH trained on the v2 split [Weights](https://iplab.dmi.unict.it/sharing/afftention/epoch=11-step=0147408-map_box_noun_verb_ttc=5.5036.ckpt) The Aff distribution employed is the following [AFF](https://iplab.dmi.unict.it/sharing/afftention/predicted_AFF_only_nodes_weighted_MAX_normalized_softmaxT2_text_visual_all_with_all.npy)
   
-- EPIC-KITCHENS STA ANNOTATIONS [training](https://drive.google.com/file/d/1VZwi69chFYZbMLJyL8SAu7Q5JbKoyy3Z/view?usp=drive_link) and [validation](https://drive.google.com/file/d/1z01Qp5Sy4UMcAdJZhQNzyGaMn4ds35wj/view?usp=drive_link). You can download the videos and images on the EPIC-KITCHENS official webpage.
+- EPIC-KITCHENS STA ANNOTATIONS [training](https://iplab.dmi.unict.it/sharing/afftention/train_annotations.pkl) and [validation](https://iplab.dmi.unict.it/sharing/afftention/val_annotations.pkl). You can download the videos and images on the EPIC-KITCHENS official webpage.
 
 # Run the code! 🧑🏽‍💻 🧑🏽‍💻
 
